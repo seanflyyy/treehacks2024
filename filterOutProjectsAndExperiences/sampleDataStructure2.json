@@ -1,0 +1,167 @@
+{
+    "details": {
+        "name": "ALLEN GU",
+        "email": "allengu01@berkeley.edu",
+        "phone": "630-854-2586",
+        "linkedin": "linkedin.com/in/allengu01",
+        "github": "github.com/allengu01",
+        "website": "allengu01.github.io"
+    },
+    "education": {
+        "level_of_education": "Bachelor of Science",
+        "field_of_study": "Electrical Engineering and Computer Science",
+        "school": "University of California, Berkeley",
+        "school_location": null,
+        "from_date": "undefined undefined",
+        "to_date": "undefined undefined"
+    },
+    "experience": [
+        {
+            "company": "Workday",
+            "id": "dff613b2-35da-4297-8846-c5f68917457f",
+            "position": "Soffware Engineering Intern (Site Reliability)"
+        },
+        {
+            "company": "May 2022 - present",
+            "id": "184ce4ba-0928-454b-a632-658f9512198f",
+            "position": "UC Berkeley Department of EECS",
+            "responsibilities": [
+                "Created automation tooling for development workflow and continuous integration through a Go AWS Lambda bot.",
+                "Led the migration of a repository with 100+ developers to integrate the bot by defining and coding requested features.",
+                "Improved observability through Cloudwatch metric monitoring and Prometheus alarming, deployed on AWS EKS cluster.",
+                "Built AWS, Prometheus, and Kubernetes architecture with infrastructure as code (IaC) tool Terraform."
+            ]
+        },
+        {
+            "company": "20-hour Undergraduate Student Instructor (uGSI)",
+            "id": "685b648b-abaa-42b2-b6ff-507608a7ca4b",
+            "position": "Jan. 2021 - Present",
+            "responsibilities": [
+                "Taught weekly discussion and lab sections, review sessions, and office hours for courses totaling 2500+ students.",
+                "Created and edited course content to enhance learning (worksheets, video walkthroughs, and study guides).",
+                "uGSI/Teaching Assistant for CS 61B (Java/Data Structures) and CS 70 (Discrete Math/Probability)."
+            ]
+        },
+        {
+            "company": "Berkeley Codeology",
+            "id": "0e2ec414-1775-4f6b-b26f-d4007a1c5fa7",
+            "position": "Director of Technology"
+        },
+        {
+            "company": "Jan. 2021 - Present",
+            "id": "0a2ae1a6-d22b-4953-b573-a879223eabcb",
+            "position": "algorithms to train artificial intelligence to play Flappy Bird.",
+            "responsibilities": [
+                "Coordinated 5 internal and 2 contract projects, providing tech exploration opportunities for 60 students.",
+                "Guided and supported a 15-member committee in brainstorming project ideas, developing curriculums, and debugging.",
+                "Mentored a team of 5 student developers in FlapPy, a self-created project utilizing Pygame, neural networks, and genetic"
+            ]
+        },
+        {
+            "company": "Avanti",
+            "id": "d2c01e26-17fd-447c-9cc4-a74934ed0710",
+            "position": "Soffware Developer"
+        },
+        {
+            "company": "Aug. 2021 - Dec. 2021",
+            "id": "cb742868-a806-4f43-a8a7-24f6499fcaec",
+            "responsibilities": [
+                "Built a React Native mobile app from scratch that connects K-12 students with local tutors in various subjects.",
+                "Led the implementation of various features including user authentication, organizing sessions, and real-time messaging.",
+                "Utilized the Sharetribe API and React contexts to manage tutoring sessions and user data."
+            ]
+        }
+    ],
+    "skills": {
+        "skill_type": [
+            "languages",
+            "languages",
+            "languages",
+            "languages",
+            "languages",
+            "languages",
+            "languages",
+            "languages",
+            "languages",
+            "languages",
+            "technologies",
+            "technologies",
+            "technologies",
+            "technologies",
+            "technologies",
+            "technologies",
+            "technologies",
+            "technologies",
+            "technologies",
+            "technologies"
+        ],
+        "skills": [
+            "Python",
+            "Java",
+            "Golang",
+            "SQL",
+            "HTML/CSS",
+            "Javascript",
+            "Swiff",
+            "C/C++",
+            "Bash",
+            "RISC-V Assembly",
+            "Amazon Web Services (AWS)",
+            "Terraform",
+            "Kubernetes",
+            "Docker",
+            "Prometheus",
+            "Git",
+            "React.js",
+            "React Native",
+            "Node.js",
+            ""
+        ]
+    },
+    "projects": [
+        {
+            "description": [
+                "Engineered a custom version control system based on Git.",
+                "Supported basic methods (init, add, remove, commit, status, log), branching, and remote repositories.",
+                "Implemented search algorithms and data structures to merge branches and track files across commits."
+            ],
+            "id": "6a59a086-208a-4267-aa92-8253e6e112c2",
+            "technologies": [
+                "Java"
+            ],
+            "title": "Gitlet"
+        },
+        {
+            "description": [
+                "React.js website for collaborating on playlists, connecting users, and joining listening rooms using Spotify's API.",
+                "Implemented synchronized listening and playback state with web sockets and a PostgreSQL database.",
+                "Designed a frontend with React.js and created a Node.js backend for authenticating users and interacting with Spotify."
+            ],
+            "id": "222a716c-2065-4c43-adb5-353147e815b9",
+            "technologies": [
+                "HTML",
+                " CSS",
+                " Javascript",
+                " React.js",
+                " Node.js",
+                " PostgreSQL",
+                " SocketIO"
+            ],
+            "title": "Spotify Collab"
+        },
+        {
+            "description": [
+                "iOS app that allows users to build training datasets and classify images from their phone camera or photo gallery.",
+                "Designed the UI in Figma, built the iOS frontend with SwiffUI, and set up a Flask server to interact with AWS services.",
+                "Integrated AWS S3 to store training image files and AWS SageMaker to train the image classification model."
+            ],
+            "id": "e9f1be98-93aa-404b-9cfa-b46eb895e224",
+            "technologies": [
+                "Swiff",
+                " Python",
+                " Flask"
+            ],
+            "title": "ClassifAI"
+        }
+    ]
+}

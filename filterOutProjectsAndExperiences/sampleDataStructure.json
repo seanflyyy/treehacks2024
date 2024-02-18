@@ -66,16 +66,6 @@
                 "Developing backend software for the Discover UCSD platform. Crafted Python scripts leveraging Clever API, Swagger/OpenAPI specification, and Kaltura API.", 
                 "Performed sentiment analysis from feedback of the platform (NLTK, NLP)."
             ]
-        },
-
-        {
-            "company": "ABCD compnany",
-            "position": "Software Developer intern",
-            "dates": "2023 - 2024",
-            "responsibilities": [
-                "Conducted extensive research into diverse methodologies for developing Hybrid Kubernetes Clusters.",
-                "Configured & deployed various Hybrid Kubernetes Cluster methods. Authored a report documenting the investigation process, implementation details, and troubleshooting solutions."
-            ]
         }
     ],
     "projects": [
