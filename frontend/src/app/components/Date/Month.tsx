@@ -1,8 +1,14 @@
 import {Select} from "@chakra-ui/react";
 
-export default function Month() {
+export default function Month({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (e: any) => void;
+}) {
   return (
-    <Select placeholder="Month">
+    <Select placeholder="Month" onChange={onChange} defaultValue={value}>
       <option key="January" value="January">
         January
       </option>

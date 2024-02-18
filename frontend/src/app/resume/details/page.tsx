@@ -1,4 +1,5 @@
 "use client";
+import {IDetails, Resume, setDetails} from "@/redux/slice/details";
 import {
   FormControl,
   FormLabel,
@@ -19,11 +20,31 @@ import {
   InputGroup,
 } from "@chakra-ui/react";
 import {useRouter} from "next/navigation";
+import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 export default function Details() {
   const router = useRouter();
+  const details: IDetails = useSelector((state: any) => state.details.details);
+  const dispatch = useDispatch();
+
+  const [name, setName] = useState(details.name);
+  const [email, setEmail] = useState(details.email);
+  const [phone, setPhone] = useState(details.phone);
+  const [linkedin, setLinkedin] = useState(details.linkedin);
+  const [github, setGithub] = useState(details.github);
+  const [website, setWebsite] = useState(details.website);
 
   const onClick = () => {
+    const payload = {
+      name,
+      email,
+      phone,
+      linkedin,
+      github,
+      website,
+    };
+    dispatch(setDetails(payload));
     router.push("/resume/education");
   };
 
@@ -40,28 +61,34 @@ export default function Details() {
             <Text>Build your resume (1 of 5)</Text>
           </VStack>
           <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
-            <GridItem colSpan={1}>
+            <GridItem colSpan={2}>
               <FormControl>
-                <FormLabel>First Name</FormLabel>
-                <Input placeholder="John" />
-              </FormControl>
-            </GridItem>
-            <GridItem colSpan={1}>
-              <FormControl>
-                <FormLabel>Last Name</FormLabel>
-                <Input placeholder="Doe" />
+                <FormLabel>Name</FormLabel>
+                <Input
+                  placeholder={"Name"}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
               </FormControl>
             </GridItem>
             <GridItem colSpan={2}>
               <FormControl>
                 <FormLabel>Email</FormLabel>
-                <Input placeholder="Email" />
+                <Input
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </FormControl>
             </GridItem>
             <GridItem colSpan={1}>
               <FormControl>
                 <FormLabel>Phone</FormLabel>
-                <Input placeholder="Phone" />
+                <Input
+                  placeholder="Phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
               </FormControl>
             </GridItem>
             <GridItem colSpan={1}>
@@ -69,8 +96,11 @@ export default function Details() {
                 <FormLabel>LinkedIn</FormLabel>
                 <InputGroup>
                   <InputLeftAddon>https://</InputLeftAddon>
-                  <Input placeholder="linkedin" />
-                  <InputRightAddon>.com</InputRightAddon>
+                  <Input
+                    placeholder="linkedin"
+                    value={linkedin}
+                    onChange={(e) => setLinkedin(e.target.value)}
+                  />
                 </InputGroup>
               </FormControl>
             </GridItem>
@@ -79,8 +109,11 @@ export default function Details() {
                 <FormLabel>GitHub</FormLabel>
                 <InputGroup>
                   <InputLeftAddon>https://</InputLeftAddon>
-                  <Input placeholder="github" />
-                  <InputRightAddon>.com</InputRightAddon>
+                  <Input
+                    placeholder="github"
+                    value={github}
+                    onChange={(e) => setGithub(e.target.value)}
+                  />
                 </InputGroup>
               </FormControl>
             </GridItem>
@@ -89,8 +122,11 @@ export default function Details() {
                 <FormLabel>Website</FormLabel>
                 <InputGroup>
                   <InputLeftAddon>https://</InputLeftAddon>
-                  <Input placeholder="website" />
-                  <InputRightAddon>.com</InputRightAddon>
+                  <Input
+                    placeholder="website"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
                 </InputGroup>
               </FormControl>
             </GridItem>

@@ -1,8 +1,16 @@
 import React, {useState, useRef, useEffect} from "react";
 import {Textarea} from "@chakra-ui/react";
 
-const AutoResizingTextarea = () => {
-  const [value, setValue] = useState("");
+const AutoResizingTextarea = ({
+  text = [""],
+  onChange,
+}: {
+  text: string[];
+  onChange: (text: string[]) => void;
+}) => {
+  text = text.length === 0 ? [""] : text;
+
+  const [value, setValue] = useState(text.join("\n"));
   const textareaRef = useRef<HTMLTextAreaElement>(null); // Add type annotation to useRef
 
   // Adjust the textarea height based on its content

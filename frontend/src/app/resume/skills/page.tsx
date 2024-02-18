@@ -27,12 +27,17 @@ import Month from "@/app/components/Date/Month";
 import AutoResizingTextarea from "@/app/components/TextArea/AutoResizingTextArea";
 import {useState} from "react";
 import SkillsInputWithSuggestions from "./components/SkillsInputWithSuggestionts";
+import {useDispatch, useSelector} from "react-redux";
+import {ISkills, setSkill} from "@/redux/slice/details";
 
 export default function Skills() {
   const router = useRouter();
-  const [skills, setSkills] = useState([]);
+  const dispatch = useDispatch();
+  const skills: ISkills = useSelector((state: any) => state.details.skills);
+  const [currSkills, setCurrSkills] = useState(skills.skills);
 
   const onClick = () => {
+    dispatch(setSkill(currSkills));
     router.push("/home");
   };
 
@@ -53,7 +58,10 @@ export default function Skills() {
               <Text>Your skills will appear here</Text>
             </GridItem>
             <GridItem colSpan={2}>
-              <SkillsInputWithSuggestions />
+              <SkillsInputWithSuggestions
+                skillArr={currSkills}
+                onChange={(skills: string[]) => setCurrSkills(skills)}
+              />
             </GridItem>
             <GridItem colSpan={2} mt={10}>
               <Flex
