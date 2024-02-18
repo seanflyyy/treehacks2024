@@ -1,0 +1,42 @@
+cv:
+  name: John Doe
+  email: johndoe@example.com
+  website: https://example.com
+  social_networks:
+    - network: GitHub
+      username: johndoe
+    - network: LinkedIn
+      username: johndoe
+  education:
+    - institution: "Columbia University"
+      study_type: BS
+      area: Mechanical Engineering
+      location: Geneva, Switzerland
+      gpa: 3.10/4.00
+  work_experience:
+    - company: AmIACompany
+      position: Summer Intern
+      location: ""
+      start_date: "2022-06-15"
+      end_date: "2022-08-01"
+      highlights:
+        - AmIACompany is a **technology** (markdown is
+          supported) company that provides web-based
+          engineering applications that enable the
+          simulation and optimization of products and
+          manufacturing tools.
+        - Modeled and simulated a metal-forming process deep
+          drawing using finite element analysis with
+          open-source software called CalculiX.
+  skills:
+    - name: Programming Languages
+      details: "C++ (Advanced), C (Advanced), Python (Advanced), JavaScript (Intermediate)"
+    - name: Simulation Tools
+      details: "CalculiX (Intermediate), AnotherTool (Beginner)"
+  projects:
+    - name: Design and Construction of a Dynamometer
+      location: Istanbul, Turkey
+      date: Fall 2022
+      highlights:
+        - Designed and constructed a controllable dynamometer that measures an electric
+          motor's torque and power output at different speeds for my senior design project.
