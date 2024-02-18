@@ -1,0 +1,32 @@
+[
+  {
+    "company": "Intel",
+    "title": "SW Engineer",
+    "description": "Currently pursuing a Degree in Electrical Engineering, Software Engineering, Computer Science / Engineering, or a related field  Strong Matlab or Python programming skills, familiarity with common python packages  Familiarity with machine learning algorithms, familiarity with robotics algorithms such as Kalman Filter, Particle Filter, SLAM. Strong training of math (probability, statistics, linear algebra)  Experience in embedded C/C++ programming, board bring-up, profiling, optimization, simulation, and various levels of testing (SW only, HW/SW integration, etc.)  Very strong mathematical skills in probability, advanced linear algebra and calculus  Good data analysis and data visualization skills would be a huge plus Experience with Ethernet or CAN communication protocols is preferred",
+    "score": 77
+  },
+  {
+    "company": "Amazon",
+    "title": "QA Engineer",
+    "description": "Experience in Engineering, Computer science or proof of exceptional skills in related field Experience in SDLC/STLC and QA processes Experience in Wireless technologies and test plan development Knowledge or experience with Bluetooth profiles functional testing i.e. A2DP,HFP,MAP,HID,etc Knowledge or experience with Wi-Fi protocol functional testing i.e. 802.11 a,b,g,n,ac,ax,etc Working knowledge of BT IOT testing and familiarity using tools i.e. FTS, Ellisys (OTA sniffer) a plus Working knowledge of Wi-Fi throughput and Range Vs Rate tests and familiarity using tools i.e. Wireshark, iPerf a plus Knowledge or experience with BT/Wi-Fi co-ex testing a plus Working knowledge or experience with test automation frameworks using Python, Shell, GIT or Jenkins ",
+    "score": 75
+  },
+  {
+    "company": "Google",
+    "title": "SW Engineer",
+    "description": "Currently pursuing a Degree in Electrical Engineering, Software Engineering, Computer Science / Engineering, or a related field  Strong Matlab or Python programming skills, familiarity with common python packages  Familiarity with machine learning algorithms, familiarity with robotics algorithms such as Kalman Filter, Particle Filter, SLAM. Strong training of math (probability, statistics, linear algebra)  Experience in embedded C/C++ programming, board bring-up, profiling, optimization, simulation, and various levels of testing (SW only, HW/SW integration, etc.)  Very strong mathematical skills in probability, advanced linear algebra and calculus  Good data analysis and data visualization skills would be a huge plus Experience with Ethernet or CAN communication protocols is preferred",
+    "score": 77
+  },
+  {
+    "company": "JP Morgan",
+    "title": "Associate",
+    "description": "Current law student, from an ABA-accredited top law school (applying for a position for the upcoming summer and the next year of school) Excellent academic credentials Experience or knowledge in researching legal issues Experience or knowledge writing summaries of complex information Experience using PowerPoint, Excel, Word, Outlook, etc ",
+    "score": 61
+  },
+  {
+    "company": "Microsoft",
+    "title": "AI Research Engineer",
+    "description": "Expertise in state-of-the-art model optimization techniques preferably with publications in top conferences Proficient in Python coding Proficient in PyTorch, TensorFlow, Jax, or other machine learning frameworks Proficient with state-of-the-art model optimization techniques Experience with training and deploying neural networks in a research and/or production setting Understanding of computer systems and architecture",
+    "score": 91
+  }
+]
