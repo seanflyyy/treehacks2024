@@ -1,5 +1,6 @@
 import json
 import yaml
+import subprocess
 with open("input.json", 'r') as json_file:
     data = json.load(json_file)
 skills = data['skills']['skills']
@@ -64,4 +65,9 @@ yaml_string = yaml.dump(yaml_data, default_flow_style=False)
 with open('converted_resume.yaml', 'w') as yaml_file:
     yaml_file.write(yaml_string)
 
-print("Conversion completed. Check 'converted_resume.yaml'")
+rendercv_command = 'rendercv render converted_resume.yaml'
+try:
+    subprocess.run(rendercv_command, shell=True, check=True)
+    print("Conversion completed. Check 'converted_resume.yaml' and the rendered PDF.")
+except subprocess.CalledProcessError as e:
+    print(f"Error running the rendercv command: {e}")
