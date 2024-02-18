@@ -235,13 +235,17 @@ def RankAllJobs(Profiledata, jobDescriptions):
         ScoreforJob = CalculateJobScoreForIndividualProfile(experiences, projects, job_description)
         job["score"] = ScoreforJob
 
-    with open('JobsRanking.json', 'w') as file:
-        json.dump(jobDescriptions, file, indent=2)  # indent for pretty formatting, adjust as needed
+    lst = []
+    lst.append(jobDescriptions)
+    val = {}
+    val["data"] = lst
+    return json.dumps(val, indent=2)  
 
 
 
 #arrays of job entries
 job_data = jsonify_job_results()
-profile = json.dumps(jsonify_profile()[0], indent=4)
-RankAllJobs(profile, job_data)
+profile = json.dumps(jsonify_profile()[-1], indent=2)
+results = RankAllJobs(profile, job_data)
 
+print(profile)
