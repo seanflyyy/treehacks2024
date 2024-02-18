@@ -19,14 +19,54 @@ import Year from "@/app/components/Date/Year";
 import Month from "@/app/components/Date/Month";
 import AutoResizingTextarea from "@/app/components/TextArea/AutoResizingTextArea";
 import ExperienceForm from "./components/ExperienceForm";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {IExperience, Resume, setExperience} from "@/redux/slice/details";
 
 export default function Experience() {
   const router = useRouter();
-  const [experience, setExperience] = useState([0]);
-  console.log(experience);
+  const dispatch = useDispatch();
+  const experience: IExperience[] = useSelector(
+    (state: any) => state.details.experience
+  );
+
+  const [experiences, setExperiences] = useState<IExperience[]>(experience);
+
+  useEffect(() => {
+    setExperiences(experiences);
+  }, [experiences]);
+
+  const updateExperience = (updatedExperience: IExperience, id: string) => {
+    setExperiences((oldArray) => {
+      // Create a duplicate of the array
+      const newArray = [...oldArray];
+      // Update the specific index with the updated experience
+      const index = newArray.findIndex((experience) => experience.id === id);
+      // Return the new array
+      newArray[index] = updatedExperience;
+
+      return newArray;
+    });
+  };
+
+  const removeExperience = (id: string) => {
+    // console.log("index is", id);
+    setExperiences((oldArray) => {
+      let counter = 0;
+      const newArray = [...oldArray];
+      while (newArray[counter].id !== id) {
+        counter++;
+      }
+      newArray.splice(counter, 1);
+      return [...newArray];
+    });
+  };
+
+  // const [experience, setExperience] = useState([0]);
 
   const onClick = () => {
+    console.log("completed experiences", experiences);
+    dispatch(setExperience(experiences));
     router.push("/resume/projects");
   };
 
@@ -43,12 +83,18 @@ export default function Experience() {
             <Text>Build your resume (3 of 5)</Text>
           </VStack>
           <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
-            {experience.map((_, index) => {
+            {experiences.map((experience, index) => {
               return (
                 <ExperienceForm
                   key={index}
                   title={`Experience ${index + 1}`}
-                  hasDivider={index === experience.length - 1 ? false : true}
+                  hasDivider={index === experiences.length - 1 ? false : true}
+                  // update experience corresponding to that specific index
+                  experience={experience}
+                  onChange={(experience: IExperience) =>
+                    updateExperience(experience, experience.id)
+                  }
+                  onDelete={() => removeExperience(experience.id)}
                 />
               );
             })}
@@ -56,7 +102,19 @@ export default function Experience() {
               <Button
                 colorScheme="teal"
                 variant="outline"
-                onClick={() => setExperience((oldArray) => [...oldArray, 0])}
+                onClick={() => {
+                  const templateExperience: IExperience = {
+                    company: "",
+                    position: "",
+                    dates: "",
+                    responsibilities: [],
+                    id: Math.random().toString(36).substr(2, 9),
+                  };
+                  setExperiences((oldArray) => [
+                    ...oldArray,
+                    templateExperience,
+                  ]);
+                }}
               >
                 Add Job Experience
               </Button>

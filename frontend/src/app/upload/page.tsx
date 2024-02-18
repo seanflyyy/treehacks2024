@@ -21,9 +21,20 @@ import axios from "axios";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
 import {BACKEND_URL} from "@/contants";
+// import Link from "next/link";
+import {Provider, useDispatch} from "react-redux";
+import {
+  setDetails,
+  setEducation,
+  setExperience,
+  setProjects,
+  setSkills,
+} from "@/redux/slice/details";
+import store from "@/redux/store";
 
 const UploadResume = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [file, setFile] = useState(null);
 
@@ -48,6 +59,15 @@ const UploadResume = () => {
         },
       });
       console.log(response.data);
+      const data = response.data[0].data;
+      console.log("uploaded data is", data);
+      // Update redux state
+      dispatch(setDetails(data.details));
+      dispatch(setEducation(data.education));
+      dispatch(setExperience(data.experience));
+      dispatch(setProjects(data.projects));
+      dispatch(setSkills(data.skills));
+
       router.push("/resume/details");
     } catch (error) {
       alert("Upload failed");
@@ -55,15 +75,32 @@ const UploadResume = () => {
   };
 
   return (
-    <Container maxW="container.md">
-      <Flex alignItems="center" justifyContent={"center"} height="100vh">
-        <VStack spacing={5}>
-          <Heading size="xl">Upload Your Resume</Heading>
-          <Input type="file" onChange={handleFileChange} accept=".pdf" />
-          <Button onClick={handleSubmit}>Upload</Button>
-        </VStack>
-      </Flex>
-    </Container>
+    <Provider store={store}>
+      <Container maxW="container.md">
+        <Flex alignItems="center" justifyContent={"center"} height="100vh">
+          <VStack spacing={8}>
+            <Heading size="xl">Upload Your Resume</Heading>
+            <Input type="file" onChange={handleFileChange} accept=".pdf" />
+            <HStack justifyContent={"flex-start"} width={"full"}>
+              <Flex width={"full"} justifyContent={"flex-start"}>
+                <Button onClick={handleSubmit} width="full">
+                  Upload
+                </Button>
+              </Flex>
+              <Flex width={"full"} justifyContent={"flex-start"}>
+                <Button
+                  variant="link"
+                  width="full"
+                  onClick={() => router.push("/resume/details")}
+                >
+                  Skip
+                </Button>
+              </Flex>
+            </HStack>
+          </VStack>
+        </Flex>
+      </Container>
+    </Provider>
   );
 };
 

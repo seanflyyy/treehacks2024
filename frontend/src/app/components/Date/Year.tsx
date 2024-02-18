@@ -2,13 +2,15 @@ import {Select} from "@chakra-ui/react";
 
 export default function Year({
   startYear,
-  onSelect,
+  defaultValue,
+  onChange,
 }: {
   startYear: number;
-  onSelect?: (year: number) => void;
+  defaultValue: string;
+  onChange: (e: any) => void;
 }) {
   return (
-    <Select placeholder="Year">
+    <Select placeholder="Year" defaultValue={defaultValue} onChange={onChange}>
       {Array.from({length: 30}, (_, i) => startYear - i).map((year) => (
         <option key={year} value={year}>
           {year}
