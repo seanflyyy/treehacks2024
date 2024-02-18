@@ -1,4 +1,4 @@
-import { mutation } from "./_generated/server";
+import { mutation } from "../_generated/server";
 import { v } from "convex/values";
 
 // Create a new task with the given text
@@ -8,7 +8,9 @@ export const post = mutation({
       level_of_education: v.string(),
       school: v.string(),
       field_of_study: v.string(),
-      school_location: v.string()
+      school_location: v.string(),
+      from_date: v.string(),
+      to_date: v.string()
     },
     handler: async (ctx, args) => {
       // Include user_id and name in the object to be inserted
@@ -17,7 +19,9 @@ export const post = mutation({
         level_of_education: args.level_of_education,
         school: args.school,
         field_of_study: args.field_of_study,
-        school_location: args.school_location
+        school_location: args.school_location,
+        from_date: args.from_date,
+        to_date: args.to_date 
       });
       return newEducation;
     },

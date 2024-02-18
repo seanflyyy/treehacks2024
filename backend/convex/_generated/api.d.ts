@@ -14,14 +14,17 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
-import type * as details from "../details.js";
-import type * as education from "../education.js";
-import type * as experiences from "../experiences.js";
-import type * as projects from "../projects.js";
-import type * as resume from "../resume.js";
-import type * as skills from "../skills.js";
-import type * as tasks from "../tasks.js";
-import type * as user from "../user.js";
+import type * as JobCreateSchemas_companies from "../JobCreateSchemas/companies.js";
+import type * as JobCreateSchemas_jobPosting from "../JobCreateSchemas/jobPosting.js";
+import type * as JobGetNullScores_JobCompanyConnect from "../JobGetNullScores/JobCompanyConnect.js";
+import type * as JobGetNullScores_getNull from "../JobGetNullScores/getNull.js";
+import type * as UserCreateSchemas_details from "../UserCreateSchemas/details.js";
+import type * as UserCreateSchemas_education from "../UserCreateSchemas/education.js";
+import type * as UserCreateSchemas_experiences from "../UserCreateSchemas/experiences.js";
+import type * as UserCreateSchemas_projects from "../UserCreateSchemas/projects.js";
+import type * as UserCreateSchemas_resume from "../UserCreateSchemas/resume.js";
+import type * as UserCreateSchemas_skills from "../UserCreateSchemas/skills.js";
+import type * as UserCreateSchemas_user from "../UserCreateSchemas/user.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -32,14 +35,17 @@ import type * as user from "../user.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  details: typeof details;
-  education: typeof education;
-  experiences: typeof experiences;
-  projects: typeof projects;
-  resume: typeof resume;
-  skills: typeof skills;
-  tasks: typeof tasks;
-  user: typeof user;
+  "JobCreateSchemas/companies": typeof JobCreateSchemas_companies;
+  "JobCreateSchemas/jobPosting": typeof JobCreateSchemas_jobPosting;
+  "JobGetNullScores/JobCompanyConnect": typeof JobGetNullScores_JobCompanyConnect;
+  "JobGetNullScores/getNull": typeof JobGetNullScores_getNull;
+  "UserCreateSchemas/details": typeof UserCreateSchemas_details;
+  "UserCreateSchemas/education": typeof UserCreateSchemas_education;
+  "UserCreateSchemas/experiences": typeof UserCreateSchemas_experiences;
+  "UserCreateSchemas/projects": typeof UserCreateSchemas_projects;
+  "UserCreateSchemas/resume": typeof UserCreateSchemas_resume;
+  "UserCreateSchemas/skills": typeof UserCreateSchemas_skills;
+  "UserCreateSchemas/user": typeof UserCreateSchemas_user;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
