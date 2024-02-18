@@ -55,14 +55,20 @@ export default function Skills() {
             <GridItem colSpan={2}>
               <SkillsInputWithSuggestions />
             </GridItem>
-            <GridItem colSpan={1} w="full">
-              <Button
-                colorScheme="blue"
-                onClick={onClick}
-                alignSelf={"flex-end"}
+            <GridItem colSpan={2} mt={10}>
+              <Flex
+                height="100%"
+                alignItems="flex-end"
+                justifyContent="flex-end"
               >
-                Save and Continue
-              </Button>
+                <Button
+                  colorScheme="blue"
+                  onClick={onClick}
+                  alignSelf={"flex-end"}
+                >
+                  Save and Continue
+                </Button>
+              </Flex>
             </GridItem>
           </SimpleGrid>
         </VStack>

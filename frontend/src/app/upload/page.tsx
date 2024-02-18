@@ -20,6 +20,7 @@ import {
 import axios from "axios";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
+import {BACKEND_URL} from "@/contants";
 
 const UploadResume = () => {
   const router = useRouter();
@@ -41,15 +42,11 @@ const UploadResume = () => {
     formData.append("file", file);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3001/upload",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post(`${BACKEND_URL}/upload`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       console.log(response.data);
       router.push("/resume/details");
     } catch (error) {

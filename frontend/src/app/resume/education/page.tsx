@@ -23,7 +23,7 @@ export default function Education() {
   const router = useRouter();
 
   const onClick = () => {
-    router.push("/resume/resume");
+    router.push("/resume/experience");
   };
 
   return (
@@ -93,10 +93,25 @@ export default function Education() {
                 <Year startYear={2024} />
               </FormControl>
             </GridItem>
-            <GridItem colSpan={1} alignItems={"end"}>
+            {/* <GridItem colSpan={1} alignItems={"end"}>
               <Button colorScheme="blue" onClick={onClick}>
                 Save and Continue
               </Button>
+            </GridItem> */}
+            <GridItem colSpan={2} w="full" mt={10}>
+              <Flex
+                height="100%"
+                alignItems="flex-end"
+                justifyContent="flex-end"
+              >
+                <Button
+                  colorScheme="blue"
+                  onClick={onClick}
+                  alignSelf={"flex-end"}
+                >
+                  Save and Continue
+                </Button>
+              </Flex>
             </GridItem>
           </SimpleGrid>
         </VStack>

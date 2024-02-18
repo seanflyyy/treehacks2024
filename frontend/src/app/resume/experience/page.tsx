@@ -52,7 +52,7 @@ export default function Experience() {
                 />
               );
             })}
-            <GridItem colSpan={1}>
+            <GridItem colSpan={1} mt={10}>
               <Button
                 colorScheme="teal"
                 variant="outline"
@@ -61,7 +61,7 @@ export default function Experience() {
                 Add Job Experience
               </Button>
             </GridItem>
-            <GridItem colSpan={1} w="full">
+            <GridItem colSpan={1} mt={10}>
               <Flex
                 height="100%"
                 alignItems="flex-end"

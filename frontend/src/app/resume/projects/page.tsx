@@ -26,7 +26,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([0]);
 
   const onClick = () => {
-    router.push("/skills");
+    router.push("/resume/skills");
   };
 
   return (
@@ -51,16 +51,16 @@ export default function Projects() {
                 />
               );
             })}
-            <GridItem colSpan={1}>
+            <GridItem colSpan={1} mt={10}>
               <Button
                 colorScheme="teal"
                 variant="outline"
                 onClick={() => setProjects((oldArray) => [...oldArray, 0])}
               >
-                Add Project
+                Add Job Experience
               </Button>
             </GridItem>
-            <GridItem colSpan={1} w="full">
+            <GridItem colSpan={1} mt={10}>
               <Flex
                 height="100%"
                 alignItems="flex-end"

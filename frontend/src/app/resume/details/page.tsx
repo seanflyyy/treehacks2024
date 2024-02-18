@@ -94,10 +94,20 @@ export default function Details() {
                 </InputGroup>
               </FormControl>
             </GridItem>
-            <GridItem colSpan={1} alignItems={"end"}>
-              <Button colorScheme="blue" onClick={onClick}>
-                Save and Continue
-              </Button>
+            <GridItem colSpan={2} w="full" mt={10}>
+              <Flex
+                height="100%"
+                alignItems="flex-end"
+                justifyContent="flex-end"
+              >
+                <Button
+                  colorScheme="blue"
+                  onClick={onClick}
+                  alignSelf={"flex-end"}
+                >
+                  Save and Continue
+                </Button>
+              </Flex>
             </GridItem>
           </SimpleGrid>
         </VStack>
