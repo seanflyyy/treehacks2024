@@ -1,0 +1,20 @@
+ ### Response:
+Dear Hiring Manager,
+
+I am writing to express my strong interest in the SW Engineer position at Google. With my background in Electrical Engineering and Computer Science from the University of California, Berkeley, I believe that I possess the skills and experience that would make me a valuable asset to your team.
+
+Throughout my education and work experience, I have developed a strong foundation in the technologies mentioned in the job posting, such as Python, Matlab, C/C++, and machine learning algorithms. Additionally, I have gained valuable experience in embedded systems programming, data analysis, and data visualization.
+
+I am particularly drawn to Google's core values of connection, empowerment, inclusion, innovation, and trust and transparency. These values align with my own personal values and I believe that I can contribute to Google's mission of creating technology that helps people stay connected, empower them, and make a positive impact on the world.
+
+Some specific examples of how my experiences and skills align with the requirements of the SW Engineer position include:
+
+- My experience as a 20-hour Undergraduate Student Instructor (uGSI) at UC Berkeley, where I taught weekly discussion and lab sections for courses totaling 2500+ students, demonstrates my ability to communicate complex concepts clearly and effectively.
+- My role as a Director of Technology at Berkeley Codeology, where I coordinated 5 internal and 2 contract projects, guided a 15-member committee in brainstorming project ideas, developed curriculums, and debugged, showcases my leadership, teamwork, and project management skills.
+- My experience as a Software Developer at Avanti, where I built a React Native mobile app that connects K-12 students with local tutors in various subjects, demonstrates my ability to work with cutting-edge technologies and create user-friendly applications.
+
+I am excited about the opportunity to join Google and contribute to your mission of creating technology that helps people stay connected, empower them, and make a positive impact on the world. Thank you for considering my application. I look forward to the opportunity to discuss how my skills and experience can help achieve the goals of the SW Engineer position.
+
+Sincerely,
+ALLEN GU
+</s>
