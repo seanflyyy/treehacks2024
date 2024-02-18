@@ -1,0 +1,104 @@
+import React, {useState} from "react";
+import {
+  Input,
+  Box,
+  Tag,
+  TagLabel,
+  TagCloseButton,
+  Wrap,
+  Stack,
+  Text,
+  Divider,
+} from "@chakra-ui/react";
+
+const SkillsInputWithSuggestions = () => {
+  const allSkills = [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "CSS",
+    "HTML",
+    "Python",
+    "Django",
+    "Flask",
+  ]; // Example skills
+  const [skills, setSkills] = useState<string[]>([]);
+  const [inputValue, setInputValue] = useState<string>("");
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+
+  // Handle change in input field
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInputValue(value);
+    if (value.trim()) {
+      setSuggestions(
+        allSkills.filter((skill) =>
+          skill.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  // Handle key press in input field for adding skills with Enter
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && inputValue.trim()) {
+      e.preventDefault(); // Prevent form submission if wrapped in a form
+      addSkill(inputValue.trim());
+    }
+  };
+
+  // Add skill to array and reset suggestions and input
+  const addSkill = (skill: string) => {
+    if (!skills.includes(skill)) {
+      setSkills([...skills, skill]);
+    }
+    setInputValue("");
+    setSuggestions([]);
+  };
+
+  // Remove skill from array
+  const removeSkill = (index: number) => {
+    setSkills(skills.filter((_, i) => i !== index));
+  };
+
+  // Render skill as a tag
+  const renderSkillTag = (skill: string, index: number) => (
+    <Tag size="lg" key={index} borderRadius="full">
+      <TagLabel>{skill}</TagLabel>
+      <TagCloseButton onClick={() => removeSkill(index)} />
+    </Tag>
+  );
+
+  return (
+    <Box>
+      <Wrap spacing={2} mb={8}>
+        {skills.map(renderSkillTag)}
+      </Wrap>
+      <Divider />
+      <Input
+        placeholder="Enter skills and press Enter"
+        value={inputValue}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        mt={8}
+      />
+      <Stack spacing={1} mt={2} zIndex={10}>
+        {suggestions.map((suggestion, index) => (
+          <Text
+            key={index}
+            p={2}
+            cursor="pointer"
+            _hover={{bg: "gray.100"}}
+            onClick={() => addSkill(suggestion)}
+          >
+            {suggestion}
+          </Text>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+export default SkillsInputWithSuggestions;

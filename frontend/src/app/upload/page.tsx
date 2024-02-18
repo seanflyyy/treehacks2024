@@ -51,7 +51,7 @@ const UploadResume = () => {
         }
       );
       console.log(response.data);
-      router.push("/resume");
+      router.push("/resume/details");
     } catch (error) {
       alert("Upload failed");
     }
