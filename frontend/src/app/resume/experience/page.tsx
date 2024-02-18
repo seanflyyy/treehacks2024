@@ -32,10 +32,6 @@ export default function Experience() {
 
   const [experiences, setExperiences] = useState<IExperience[]>(experience);
 
-  useEffect(() => {
-    setExperiences(experiences);
-  }, [experiences]);
-
   const updateExperience = (updatedExperience: IExperience, id: string) => {
     setExperiences((oldArray) => {
       // Create a duplicate of the array
@@ -65,7 +61,7 @@ export default function Experience() {
   // const [experience, setExperience] = useState([0]);
 
   const onClick = () => {
-    console.log("completed experiences", experiences);
+    // console.log("completed experiences", experiences);
     dispatch(setExperience(experiences));
     router.push("/resume/projects");
   };
@@ -86,7 +82,7 @@ export default function Experience() {
             {experiences.map((experience, index) => {
               return (
                 <ExperienceForm
-                  key={index}
+                  key={experience.id}
                   title={`Experience ${index + 1}`}
                   hasDivider={index === experiences.length - 1 ? false : true}
                   // update experience corresponding to that specific index

@@ -1,5 +1,6 @@
 from pdfminer.high_level import extract_text
 from .utils import normalize_text
+import uuid
 
 def extract_text_from_pdf(pdf_path):
     return extract_text(pdf_path)
@@ -102,8 +103,8 @@ def parse_education(education: list[str]) -> list[dict]:
     {
         level_of_education: str;
         school: str;
-        field_of_study: str
-        school_location: str
+        field_of_study: str;
+        school_location: str;
     }[]
     """
 
@@ -126,6 +127,7 @@ def parse_experience(experiences: list[str]) -> list[dict]:
         position: str;
         dates: str;
         responsibilities: str[]
+        id: str;
     }[]
     """
         
@@ -143,24 +145,31 @@ def parse_experience(experiences: list[str]) -> list[dict]:
         if item == "" or item == "|":
             continue
         elif "–" in item:  # Date range might indicate a position or education
-            current_entry['Dates'] = item
+            current_entry['dates'] = item
         elif "•" in item:  # Bullet points indicate responsibilities or achievements
-            if 'Responsibilities' not in current_entry:
-                current_entry['Responsibilities'] = []
-            current_entry['Responsibilities'].append(item.strip("• ").replace("\uffff", "ff").replace("\ufb01", "fi").replace("\ufb02", "fl"))
+            if 'responsibilities' not in current_entry:
+                current_entry['responsibilities'] = []
+            current_entry['responsibilities'].append(item.strip("• ").replace("\uffff", "ff").replace("\ufb01", "fi").replace("\ufb02", "fl"))
         else:
             if not current_entry:
-                current_entry['Company'] = item
-            elif 'Company' in current_entry and 'Position' not in current_entry:
-                current_entry['Position'] = item
-            elif 'Position' in current_entry:
+                current_entry['company'] = item
+            elif 'company' in current_entry and 'position' not in current_entry:
+                current_entry['position'] = item
+            elif 'position' in current_entry:
                 # Save the previous entry if a new company or position is encountered
                 categorized_data.append(current_entry)
-                current_entry = {'Company': item}
+                current_entry = {'company': item}
 
     # Don't forget to add the last entry if the loop ends
     if current_entry:
         categorized_data.append(current_entry)
+
+
+
+    for entry in categorized_data:
+        entry['id'] = str(uuid.uuid4())
+    
+    print(categorized_data)
 
     return categorized_data
 
@@ -203,12 +212,15 @@ def parse_skills(skills_list: list[str]) -> list[str]:
         for skill in skills:
             output["skill_type"].append(category)
 
+    return output
+
 def parse_projects(projects: list[str]) -> list[str]:
     """
     {
         title: str;
         technologies: str[];
-        description: str[]
+        description: str[];
+        id: str;
     }
     """
     # Parse the list into structured data
@@ -223,7 +235,7 @@ def parse_projects(projects: list[str]) -> list[str]:
             elif not current_project.get("title"):  # If the current project has no title, the item is a title
                 current_project["title"] = item
             elif not current_project.get("technologies"):  # If the current project has a title but no technologies, the item is technologies
-                current_project["technologies"] = item
+                current_project["technologies"] = item.split(",")
             elif item.startswith("•"):  # Bullet points are project descriptions/key points
                 if "description" not in current_project:
                     current_project["description"] = []
@@ -236,6 +248,9 @@ def parse_projects(projects: list[str]) -> list[str]:
 
         if current_project:
             projects.append(current_project)
+
+        for project in projects:
+            project["id"] = str(uuid.uuid4())
 
         return projects
 

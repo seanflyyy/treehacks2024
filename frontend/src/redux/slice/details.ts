@@ -13,7 +13,6 @@ const initialState: Resume = {
   experience: [],
   skills: {
     skills: [],
-    number_of_years: [],
     skill_type: [],
   },
   projects: [],
@@ -33,10 +32,10 @@ export const detailsSlice = createSlice({
     setExperience: (state, action) => {
       state.experience = action.payload
     },
-    setSkills: (state, action) => {
+    setSkill: (state, action) => {
       state.skills = action.payload
     },
-    setProjects: (state, action) => {
+    setProject: (state, action) => {
       state.projects = action.payload
     },
   }
@@ -79,7 +78,6 @@ export interface IExperience {
 
 export interface ISkills {
   skills: string[];
-  number_of_years: string[];
   skill_type: string[];
 }
 
@@ -87,10 +85,11 @@ export interface IProjects {
   title: string;
   technologies: string[];
   description: string[];
+  id: string;
 }
 
 
 // Action creators are generated for each case reducer function
-export const { setDetails, setEducation, setExperience, setSkills, setProjects } = detailsSlice.actions
+export const { setDetails, setEducation, setExperience, setSkill, setProject } = detailsSlice.actions
 
 export default detailsSlice.reducer

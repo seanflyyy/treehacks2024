@@ -27,8 +27,8 @@ import {
   setDetails,
   setEducation,
   setExperience,
-  setProjects,
-  setSkills,
+  setProject,
+  setSkill,
 } from "@/redux/slice/details";
 import store from "@/redux/store";
 
@@ -65,8 +65,8 @@ const UploadResume = () => {
       dispatch(setDetails(data.details));
       dispatch(setEducation(data.education));
       dispatch(setExperience(data.experience));
-      dispatch(setProjects(data.projects));
-      dispatch(setSkills(data.skills));
+      dispatch(setProject(data.projects));
+      dispatch(setSkill(data.skills));
 
       router.push("/resume/details");
     } catch (error) {

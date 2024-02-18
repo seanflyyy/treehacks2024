@@ -62,7 +62,6 @@ def create_user_route():
         create_skills(resume_id, skill['skill'])
 
 
-
 if __name__ == '__main__':
     app.run(port=3001)
 

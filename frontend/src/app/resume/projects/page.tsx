@@ -20,12 +20,47 @@ import Month from "@/app/components/Date/Month";
 import AutoResizingTextarea from "@/app/components/TextArea/AutoResizingTextArea";
 import ProjectsForm from "./components/ProjectsForm";
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {IProjects, setProject} from "@/redux/slice/details";
 
 export default function Projects() {
   const router = useRouter();
-  const [projects, setProjects] = useState([0]);
+  const dispatch = useDispatch();
+  const project: IProjects[] = useSelector(
+    (state: any) => state.details.projects
+  );
+
+  const [projects, setProjects] = useState(project);
+
+  console.log(projects);
+
+  const updateProject = (updatedProject: any, id: string) => {
+    setProjects((oldArray) => {
+      // Create a duplicate of the array
+      const newArray = [...oldArray];
+      // Update the specific index with the updated experience
+      const index = newArray.findIndex((project) => project.id === id);
+      // Return the new array
+      newArray[index] = updatedProject;
+
+      return newArray;
+    });
+  };
+
+  const removeProject = (id: string) => {
+    setProjects((oldArray) => {
+      let counter = 0;
+      const newArray = [...oldArray];
+      while (newArray[counter].id !== id) {
+        counter++;
+      }
+      newArray.splice(counter, 1);
+      return [...newArray];
+    });
+  };
 
   const onClick = () => {
+    dispatch(setProject(projects));
     router.push("/resume/skills");
   };
 
@@ -42,12 +77,17 @@ export default function Projects() {
             <Text>Build your resume (4 of 5)</Text>
           </VStack>
           <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
-            {projects.map((_, index) => {
+            {projects.map((project, index) => {
               return (
                 <ProjectsForm
-                  key={index}
+                  key={project.id}
                   title={`Project ${index + 1}`}
                   hasDivider={index === projects.length - 1 ? false : true}
+                  project={project}
+                  onChange={(project: IProjects) =>
+                    updateProject(project, project.id)
+                  }
+                  onDelete={() => removeProject(project.id)}
                 />
               );
             })}
@@ -55,7 +95,15 @@ export default function Projects() {
               <Button
                 colorScheme="teal"
                 variant="outline"
-                onClick={() => setProjects((oldArray) => [...oldArray, 0])}
+                onClick={() => {
+                  const templateProject: IProjects = {
+                    id: `${projects.length + 1}`,
+                    title: "",
+                    description: [],
+                    technologies: [],
+                  };
+                  setProjects((oldArray) => [...oldArray, templateProject]);
+                }}
               >
                 Add Job Experience
               </Button>
