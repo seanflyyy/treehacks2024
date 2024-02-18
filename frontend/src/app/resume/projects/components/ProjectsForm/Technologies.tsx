@@ -7,12 +7,23 @@ import {
   TagCloseButton,
   Wrap,
 } from "@chakra-ui/react";
-export default function TechnologiesInput() {
-  const [skills, setSkills] = useState<string[]>([]);
+export default function TechnologiesInput({
+  values,
+  onChange,
+}: {
+  values: string[];
+  onChange: (value: string[]) => void;
+}) {
+  console.log("values are", values);
+  const [skills, setSkills] = useState<string[]>(values || []);
+
+  console.log("skills are", skills);
   const [inputValue, setInputValue] = useState("");
 
   // Handle change in input field
-  const handleChange = (e: any) => setInputValue(e.target.value);
+  const handleChange = (e: any) => {
+    setInputValue(e.target.value);
+  };
 
   // Handle key press in input field
   const handleKeyDown = (e: any) => {
@@ -21,6 +32,8 @@ export default function TechnologiesInput() {
       e.preventDefault();
       // Add skill to array
       setSkills([...skills, inputValue.trim()]);
+      // Update parent component
+      onChange([...skills, inputValue.trim()]);
       // Clear input field
       setInputValue("");
     }
@@ -29,6 +42,7 @@ export default function TechnologiesInput() {
   // Remove skill from array
   const removeSkill = (index: number) => {
     setSkills(skills.filter((_, i) => i !== index));
+    onChange(skills.filter((_, i) => i !== index));
   };
 
   return (

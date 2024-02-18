@@ -10,19 +10,117 @@ import {
   Text,
   Divider,
 } from "@chakra-ui/react";
+import {ISkills} from "@/redux/slice/details";
 
-const SkillsInputWithSuggestions = () => {
+const SkillsInputWithSuggestions = ({
+  skillArr,
+  onChange,
+}: {
+  skillArr: string[];
+  onChange: (skills: string[]) => void;
+}) => {
   const allSkills = [
-    "JavaScript",
-    "React",
     "Node.js",
-    "CSS",
-    "HTML",
-    "Python",
+    "React",
+    "Angular",
+    "Vue.js",
     "Django",
     "Flask",
+    "Ruby on Rails",
+    "ASP.NET Core",
+    "Spring Boot",
+    "Laravel",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "MySQL",
+    "SQLite",
+    "Cassandra",
+    "Redis",
+    "Elasticsearch",
+    "GraphQL",
+    "Apollo",
+    "Kubernetes",
+    "Docker",
+    "AWS",
+    "Google Cloud Platform",
+    "Azure",
+    "Heroku",
+    "Firebase",
+    "Terraform",
+    "Ansible",
+    "Jenkins",
+    "CircleCI",
+    "Travis CI",
+    "GitLab CI/CD",
+    "GitHub Actions",
+    "Selenium",
+    "Puppeteer",
+    "Jest",
+    "Mocha",
+    "Chai",
+    "Cypress",
+    "Webpack",
+    "Babel",
+    "TypeScript",
+    "Sass",
+    "LESS",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Material-UI",
+    "Ant Design",
+    "VueX",
+    "Redux",
+    "Nginx",
+    "Apache",
+    "IIS",
+    "Gunicorn",
+    "PM2",
+    "Varnish",
+    "HAProxy",
+    "RabbitMQ",
+    "Apache Kafka",
+    "Socket.IO",
+    "WebRTC",
+    "GraphQL Subscriptions",
+    "Electron",
+    "React Native",
+    "Flutter",
+    "Ionic",
+    "Cordova",
+    "Xamarin",
+    "Unity",
+    "Unreal Engine",
+    "TensorFlow",
+    "PyTorch",
+    "Keras",
+    "Scikit-learn",
+    "Pandas",
+    "NumPy",
+    "Matplotlib",
+    "D3.js",
+    "Three.js",
+    "OpenGL",
+    "Vulkan",
+    "WebGL",
+    "Swift",
+    "Kotlin",
+    "Java",
+    "C#",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Go",
+    "Rust",
+    "C++",
+    "C",
+    "Solidity",
+    "WebAssembly",
+    "OpenCV",
+    "Arduino",
+    "Raspberry Pi",
   ]; // Example skills
-  const [skills, setSkills] = useState<string[]>([]);
+  const [skills, setSkills] = useState<string[]>(skillArr);
   const [inputValue, setInputValue] = useState<string>("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
@@ -53,6 +151,7 @@ const SkillsInputWithSuggestions = () => {
   const addSkill = (skill: string) => {
     if (!skills.includes(skill)) {
       setSkills([...skills, skill]);
+      onChange([...skills, skill]);
     }
     setInputValue("");
     setSuggestions([]);
@@ -61,6 +160,7 @@ const SkillsInputWithSuggestions = () => {
   // Remove skill from array
   const removeSkill = (index: number) => {
     setSkills(skills.filter((_, i) => i !== index));
+    onChange(skills.filter((_, i) => i !== index));
   };
 
   // Render skill as a tag

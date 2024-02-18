@@ -4,6 +4,8 @@ from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS
+from .models.convex.main import *
+import uuid
 
 
 app = Flask(__name__)
@@ -37,21 +39,38 @@ def upload_file():
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         data = parse_and_categorize_resumes(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
         return jsonify({'message': f'{filename} uploaded successfully', 'data' : data}, 200)
+    
+@app.route('/create_user', methods=['POST'])
+def create_user_route():
+    data = request.get_json()
+
+    # Insert data into the database
+    user_id = uuid.uuid4()
+    create_user(user_id, data['details']['name'])
+    resume_id = uuid.uuid4()
+    create_resume(user_id, resume_id)
+    create_details(resume_id, data['details']['name'], data['details']['phone'], data['details']['email'], data['details']['linkedin'], data['details']['github'])
+    for education in data['education']:
+        create_education(resume_id, education['level_of_education'], education['school'], education['field_of_study'], education['school_location'], education['from_date'], education['to_date'])
+    for experience in data['experience']:
+        create_experiences(resume_id, experience['company'], experience['position'], experience['date'], experience['responsibilities'], experience['from_date'], experience['to_date'])
+    for project in data['projects']:
+        create_projects(resume_id, project['title'], project['description'], project['technologies'])
+    for skill in data['skills']:
+        create_skills(resume_id, skill['skill'])
 
 @app.route('/getJobs')
 def get_jobs():
     # Call the relevant methods to get the description of the jobs from the database
-    pass
+    return results
 
-@app.route('/resume')
+@app.route('/getResume')
 def get_resume():
     # Call the relevant methods to get the resume from the database
-    """
-        Return me the resume pdf
-        Return me the cosine score of the pdf
-    """
-    pass
+    return profile
+    
 
 @app.route('/coverLetter')
 def get_cover_letter():
@@ -59,6 +78,19 @@ def get_cover_letter():
         Return me the cover letter
     """
     pass
+
+@app.route("/createJSON", methods=['POST'])
+def create_json():
+    """
+        Create a json file
+    """
+    data = request.get_json()
+    print(data)
+    # print("data is", data)
+    # with open('./data/data.json', 'w') as f:
+    #     json.dump(data, f)
+
+    return jsonify({'message': 'File created successfully'}, 200)
 
 if __name__ == '__main__':
     app.run(port=3001)
