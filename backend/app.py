@@ -39,6 +39,26 @@ def upload_file():
         data = parse_and_categorize_resumes(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return jsonify({'message': f'{filename} uploaded successfully', 'data' : data}, 200)
 
+@app.route('/getJobs')
+def get_jobs():
+    # Call the relevant methods to get the description of the jobs from the database
+    pass
+
+@app.route('/resume')
+def get_resume():
+    # Call the relevant methods to get the resume from the database
+    """
+        Return me the resume pdf
+        Return me the cosine score of the pdf
+    """
+    pass
+
+@app.route('/coverLetter')
+def get_cover_letter():
+    """
+        Return me the cover letter
+    """
+    pass
 
 if __name__ == '__main__':
     app.run(port=3001)

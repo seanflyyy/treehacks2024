@@ -25,6 +25,13 @@ import type * as UserCreateSchemas_projects from "../UserCreateSchemas/projects.
 import type * as UserCreateSchemas_resume from "../UserCreateSchemas/resume.js";
 import type * as UserCreateSchemas_skills from "../UserCreateSchemas/skills.js";
 import type * as UserCreateSchemas_user from "../UserCreateSchemas/user.js";
+import type * as UserGetDetails_getDetails from "../UserGetDetails/getDetails.js";
+import type * as UserGetDetails_getEducation from "../UserGetDetails/getEducation.js";
+import type * as UserGetDetails_getExperience from "../UserGetDetails/getExperience.js";
+import type * as UserGetDetails_getPerson from "../UserGetDetails/getPerson.js";
+import type * as UserGetDetails_getProjects from "../UserGetDetails/getProjects.js";
+import type * as UserGetDetails_getResume from "../UserGetDetails/getResume.js";
+import type * as UserGetDetails_getSkills from "../UserGetDetails/getSkills.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -46,6 +53,13 @@ declare const fullApi: ApiFromModules<{
   "UserCreateSchemas/resume": typeof UserCreateSchemas_resume;
   "UserCreateSchemas/skills": typeof UserCreateSchemas_skills;
   "UserCreateSchemas/user": typeof UserCreateSchemas_user;
+  "UserGetDetails/getDetails": typeof UserGetDetails_getDetails;
+  "UserGetDetails/getEducation": typeof UserGetDetails_getEducation;
+  "UserGetDetails/getExperience": typeof UserGetDetails_getExperience;
+  "UserGetDetails/getPerson": typeof UserGetDetails_getPerson;
+  "UserGetDetails/getProjects": typeof UserGetDetails_getProjects;
+  "UserGetDetails/getResume": typeof UserGetDetails_getResume;
+  "UserGetDetails/getSkills": typeof UserGetDetails_getSkills;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
