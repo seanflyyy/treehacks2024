@@ -48,10 +48,20 @@ def create_company(company_id, company_name):
 def create_job(company_id, title, description, score, url):
     client.mutation("JobCreateSchemas/jobPosting:post", dict(company_id=company_id, title=title, description=description,score=score, url=url))
 
-def jobs_with_null_scores():
+
+def query_for_jobs():
+    jobs = client.query("JobGetNullScores/JobCompanyConnect:get")
+    companies = {}
+    for item in jobs:
+        companies[item["company_id"]] = item["company_name"]
+    
+    return companies
+
+def jsonify_job_results():
     jobs = client.query("JobGetNullScores/getNull:get")
+    companies = query_for_jobs()
     filtered_data = [
-        {"company_id": item["company_id"], "title": item["title"], "description": item["description"], 
+        {"company_name": companies[item["company_id"]], "title": item["title"], "description": item["description"], 
          "score": item["score"]}
         for item in jobs
     ]
@@ -59,8 +69,9 @@ def jobs_with_null_scores():
     return json_data
 
 
-print(jobs_with_null_scores())
-#pprint(client.query("JobGetNullScores/JobCompanyConnect:get", dict(company_id=5)))
+
+#print(jsonify_job_results())
+print(jsonify_job_results())
 
 #jobs = client.query("JobGetNullScores/getNull:get")
 #pprint(jobs)
