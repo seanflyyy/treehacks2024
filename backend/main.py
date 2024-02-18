@@ -248,4 +248,3 @@ job_data = jsonify_job_results()
 profile = json.dumps(jsonify_profile()[-1], indent=2)
 results = RankAllJobs(profile, job_data)
 
-print(profile)
