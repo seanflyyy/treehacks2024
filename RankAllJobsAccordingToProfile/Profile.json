@@ -4,22 +4,28 @@
         "phone": "630-854-2586",
         "email": "allengu01@berkeley.edu",
         "linkedin": "linkedin.com/in/allengu01",
-        "github": "http://github.com/allengu01",
-        "website": "http://allengu01.github.io"
+        "github": "github.com/allengu01",
+        "website": "allengu01.github.io"
     },
     "education": [
         {
-            "level_of_education": "Bachelor of Science",
-            "school": "University of California, Berkeley",
+            "name": "University of California, Berkeley",
+            "degree": "Bachelor of Science",
             "field_of_study": "Electrical Engineering and Computer Science",
-            "school_location": "Berkeley, California, USA"
+            "school_location": "Berkeley, California, USA",
+            "gpa": "3.98",
+            "coursework": "Operating Systems (in progress), Artificial Intelligence (in progress), Data Structures, Algorithms, Machine Learning, Computer Architecture, Database Systems, Computer Security, Optimization Models, Discrete Math and Probability, Probability and Random Processes, Structure and Interpretation of Computer Programs",
+            "start_date": "2020-08-01",
+            "end_date": "2024-01-15"
         }
     ],
     "experience": [
         {
             "company": "Workday",
             "position": "Software Engineering Intern (Site Reliability)",
-            "dates": "2023 to 2024",
+            "location": "Istanbul, Turkey",
+            "start_date": "2022-05-15",
+            "end_date": "present",
             "responsibilities": [
                 "Created automation tooling for development workflow and continuous integration through a Go AWS Lambda bot.",
                 "Led the migration of a repository with 100+ developers to integrate the bot by defining and coding requested features.",
@@ -30,7 +36,8 @@
         {
             "company": "UC Berkeley Department of EECS",
             "position": "20-hour Undergraduate Student Instructor (uGSI)",
-            "dates": "2023 to 2024",
+            "start_date": "2021-01-01",
+            "end_date": "present",
             "responsibilities": [
                 "Taught weekly discussion and lab sections, review sessions, and office hours for courses totaling 2500+ students.",
                 "Created and edited course content to enhance learning (worksheets, video walkthroughs, and study guides).",
@@ -40,7 +47,8 @@
         {
             "company": "Berkeley Codeology",
             "position": "Director of Technology",
-            "dates": "2023 to 2024",
+            "start_date": "2021-01-01",
+            "end_date": "present",
             "responsibilities": [
                 "Coordinated 5 internal and 2 contract projects, providing tech exploration opportunities for 60 students.",
                 "Guided and supported a 15-member committee in brainstorming project ideas, developing curriculums, and debugging.",
@@ -50,11 +58,34 @@
         {
             "company": "Avanti",
             "position": "Software Developer",
-            "dates": "2023 to 2024",
+            "start_date": "2021-08-01",
+            "end_date": "2021-12-31",
             "responsibilities": [
                 "Built a React Native mobile app from scratch that connects K-12 students with local tutors in various subjects.",
                 "Led the implementation of various features including user authentication, organizing sessions, and real-time messaging.",
                 "Utilized the Sharetribe API and React contexts to manage tutoring sessions and user data."
+            ]
+        },
+
+        {
+            "company": "AMAZON",
+            "position": "Software Engineer",
+            "start_date": "2021-08-01",
+            "end_date": "2021-12-31",
+            "responsibilities": [
+                "Developing backend software for the Discover UCSD platform. Crafted Python scripts leveraging Clever API, Swagger/OpenAPI specification, and Kaltura API.", 
+                "Performed sentiment analysis from feedback of the platform (NLTK, NLP)."
+            ]
+        },
+
+        {
+            "company": "ABCD compnany",
+            "position": "Software Developer intern",
+            "start_date": "2021-08-01",
+            "end_date": "2021-12-31",
+            "responsibilities": [
+                "Conducted extensive research into diverse methodologies for developing Hybrid Kubernetes Clusters.",
+                "Configured & deployed various Hybrid Kubernetes Cluster methods. Authored a report documenting the investigation process, implementation details, and troubleshooting solutions."
             ]
         }
     ],
