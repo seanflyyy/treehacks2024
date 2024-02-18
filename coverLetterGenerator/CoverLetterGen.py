@@ -21,7 +21,7 @@ coreValue = Values
 
     
 
-prompt = "WRITE ME A COVER LETTER BASED ON THE FOLLOWING INFO of Company’s core values, my resume, and job description. Please help me sound natural and relate how my experiences satisfy the requirements for the jobs and resonate with the company’s values. Remember to only talk about the things that are in my resume, don’t lie and do not make up stuff and don't just list out skills in a robotic manner but rather relate the skills to the job's details. This is my profile: "
+prompt = "WRITE ME A COVER LETTER BASED ON THE FOLLOWING INFO of Company’s core values, my resume, and job description. Please help me sound natural and relate how my experiences satisfy the requirements for the jobs and resonate with the company’s values. Remember to only talk about the things that are in my resume, don’t lie and do not make up stuff and don't just list out skills in a robotic manner but rather relate the skills to the job's details. Also dont use any bullet points. This is my profile: "
 prompt = prompt + profile  + ". This is the company' s core value: " +  coreValue + "Now this is the job posting from the company: " + job
 
 model = "togethercomputer/StripedHyena-Nous-7B"
@@ -30,7 +30,7 @@ together.api_key = "f6ee2e11e1d1633456e1ad4461836612abceb914ecb860a4c4238c40dff0
 
 generated_text = ""  # Initialize an empty string to store the generated text
 for token in together.Complete.create_streaming(prompt=prompt, model=model, max_tokens=2500):
-    generated_text += token
+    generated_text += token 
 
 print(generated_text)
 
