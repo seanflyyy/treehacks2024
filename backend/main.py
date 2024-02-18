@@ -45,10 +45,11 @@ def create_education(resume_id, level_of_education, school, field_of_study, scho
 def create_company(company_id, company_name):
     client.mutation("JobCreateSchemas/companies:post", dict(company_id=company_id, company_name=company_name))
 
+#function to create a job with company_id, title, description, score, and url
 def create_job(company_id, title, description, score, url):
     client.mutation("JobCreateSchemas/jobPosting:post", dict(company_id=company_id, title=title, description=description,score=score, url=url))
 
-
+#function to create a job with company_id, title, description, score, and url
 def query_for_jobs():
     jobs = client.query("JobGetNullScores/JobCompanyConnect:get")
     companies = {}
@@ -70,19 +71,5 @@ def jsonify_job_results():
 
 
 
-#print(jsonify_job_results())
+
 print(jsonify_job_results())
-
-#jobs = client.query("JobGetNullScores/getNull:get")
-#pprint(jobs)
-
-#create_company(5, "Microsoft")
-#create_job(5, "AI Research Engineer", """Expertise in state-of-the-art model optimization techniques preferably with publications in top conferences Proficient in Python coding Proficient in PyTorch, TensorFlow, Jax, or other machine learning frameworks Proficient with state-of-the-art model optimization techniques Experience with training and deploying neural networks in a research and/or production setting Understanding of computer systems and architecture""", -1, "https://careers.microsoft.com/us/en/job/1090733/AI-Research-Engineer")
-
-#methods to get values from the database
-#function to get user by user_id
-#def get_user(user_id):
-    #return client.query("user:get", dict(user_id=user_id))
-
-
-#print(client.query("tasks:get"))
