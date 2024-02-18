@@ -79,3 +79,4 @@ job_descriptionQA = "Experience in Engineering, Computer science or proof of exc
 PrintOutScores("resume5.pdf",job_descriptionSWE)
 PrintOutScores("resume5.pdf",job_descriptionLaw)
 PrintOutScores("resume5.pdf",job_descriptionQA)
+
