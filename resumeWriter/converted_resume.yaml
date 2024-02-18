@@ -8,13 +8,6 @@ cv:
   name: ALLEN GU
   projects:
   - highlights:
-    - Engineered a custom version control system based on Git.
-    - Supported basic methods (init, add, remove, commit, status, log), branching,
-      and remote repositories.
-    - Implemented search algorithms and data structures to merge branches and track
-      files across commits.
-    name: Gitlet Java | Java
-  - highlights:
     - "React.js website for collaborating on playlists, connecting users, and joining\
       \ listening rooms using Spotify\u2019s API."
     - Implemented synchronized listening and playback state with web sockets and a
@@ -40,13 +33,13 @@ cv:
     name: Technologies
   social_networks:
   - network: GitHub
-    username: http://github.com/allengu01
+    username: https://github.com/allengu01
   - network: LinkedIn
     username: linkedin.com/in/allengu01
-  website: http://allengu01.github.io
+  website: https://allengu01.github.io
   work_experience:
   - company: Workday
-    end_date: '2024'
+    end_date: present
     highlights:
     - Created automation tooling for development workflow and continuous integration
       through a Go AWS Lambda bot.
@@ -55,7 +48,7 @@ cv:
     - Improved observability through Cloudwatch metric monitoring and Prometheus alarming,
       deployed on AWS EKS cluster.
     - Built AWS, Prometheus, and Kubernetes architecture with infrastructure as code
-      (IaC) tool Terraform.
+      (IaC).
     position: Software Engineering Intern (Site Reliability)
     start_date: '2023'
   - company: UC Berkeley Department of EECS

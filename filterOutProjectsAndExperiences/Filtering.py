@@ -83,18 +83,18 @@ def ExtractAndUpdateExperiencesAndProjects(data,jobDescription):
     data["experience"] = FilteredExperience
     data["projects"] = FilteredJob
     
-    with open('FilteredData.json', 'w') as file:
+    with open('./filterOutProjectsAndExperiences/FilteredData.json', 'w') as file:
         json.dump(data, file, indent=2)  # indent for pretty formatting, adjust as needed
         
         
 
 #Example: take in Json file, extract experiences and projects, filter out irrelevant experiences and projects, format into new json
 
-with open('sampleDataStructure.json', 'r') as file:
-    dataStruct = json.load(file)
+# with open('sampleDataStructure.json', 'r') as file:
+#     dataStruct = json.load(file)
     
-job_descriptionSWE = "Currently pursuing a Degree in Electrical Engineering, Software Engineering, Computer Science / Engineering, or a related field  Strong Matlab or Python programming skills, familiarity with common python packages  Familiarity with machine learning algorithms, familiarity with robotics algorithms such as Kalman Filter, Particle Filter, SLAM. Strong training of math (probability, statistics, linear algebra)  Experience in embedded C/C++ programming, board bring-up, profiling, optimization, simulation, and various levels of testing (SW only, HW/SW integration, etc.)  Very strong mathematical skills in probability, advanced linear algebra and calculus  Good data analysis and data visualization skills would be a huge plus Experience with Ethernet or CAN communication protocols is preferred "
-ExtractAndUpdateExperiencesAndProjects(dataStruct,job_descriptionSWE)
+# job_descriptionSWE = "Currently pursuing a Degree in Electrical Engineering, Software Engineering, Computer Science / Engineering, or a related field  Strong Matlab or Python programming skills, familiarity with common python packages  Familiarity with machine learning algorithms, familiarity with robotics algorithms such as Kalman Filter, Particle Filter, SLAM. Strong training of math (probability, statistics, linear algebra)  Experience in embedded C/C++ programming, board bring-up, profiling, optimization, simulation, and various levels of testing (SW only, HW/SW integration, etc.)  Very strong mathematical skills in probability, advanced linear algebra and calculus  Good data analysis and data visualization skills would be a huge plus Experience with Ethernet or CAN communication protocols is preferred "
+# ExtractAndUpdateExperiencesAndProjects(dataStruct,job_descriptionSWE)
 
     
     
