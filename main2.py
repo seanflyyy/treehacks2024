@@ -4,6 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import json, subprocess
 from filterOutProjectsAndExperiences import Filtering
 from resumeWriter import json_to_yaml
+from coverLetterGenerator import webScraper, CoverLetterGen, txtToPdf
 
 with open('./filterOutProjectsAndExperiences/sampleDataStructure.json', 'r') as file:
     dataStruct = json.load(file)
@@ -23,8 +24,9 @@ try:
 except subprocess.CalledProcessError as e:
     print(f"Error running the rendercv command: {e}")
 
-
-
+webScraper.generateValues("https://about.google/intl/ALL_us/commitments/")
+CoverLetterGen.createCoverLetter("./coverLetterGenerator/job.json")
+txtToPdf.coverLetterPDF()
     
     
 
