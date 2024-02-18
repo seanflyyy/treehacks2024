@@ -41,10 +41,26 @@ def generate_latex_cover_letter(applicant_name, company_name, current_date, cove
 
     print(f"Cover letter saved as '{latex_file_path}' in the current folder.")
 
-    from pdflatex import PDFLaTeX
+    import subprocess
 
-    pdfl = PDFLaTeX.from_texfile('cover_letter.tex')
-    pdf, log, completed_process = pdfl.create_pdf(keep_pdf_file=True, keep_log_file=True)
+    # Input data
+    latex_file_path = "cover_letter.tex"
+    output_pdf_path = "cover_letter.pdf"
+
+    # Compile LaTeX to PDF using pdflatex
+    try:
+        subprocess.run(["pdflatex", latex_file_path], check=True)
+        print("PDF successfully generated.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error occurred while generating PDF: {e}")
+
+    # Rename the output file to the desired name
+    try:
+        subprocess.run(["mv", "cover_letter.pdf", output_pdf_path], check=True)
+        print(f"PDF renamed to: {output_pdf_path}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error occurred while renaming PDF: {e}")
+
 
 
 # Example usage:

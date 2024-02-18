@@ -1,15 +1,15 @@
  ### Response:
 Dear Hiring Manager,
 
-I am writing to express my strong interest in the SW Engineer position at Google. With a Bachelor of Science degree in Electrical Engineering and Computer Science from the University of California, Berkeley, I believe that my education and experience align well with the requirements outlined in the job posting.
+I am writing to express my strong interest in the SW Engineer position at Google. As a student pursuing a degree in Electrical Engineering, I am excited about the opportunity to work with a company that values innovation, inclusion, and connection.
 
-I am proficient in Python and Matlab, with experience in machine learning algorithms and robotics algorithms such as Kalman Filter, Particle Filter, and SLAM. I have also gained valuable experience in embedded C/C++ programming, which I believe will be an asset in the role.
+Throughout my academic and professional experience, I have gained skills and knowledge that align with the requirements mentioned in the job posting. I am proficient in Python and have experience with machine learning algorithms, including Kalman Filter, Particle Filter, and SLAM. I am also familiar with robotics algorithms and have experience in embedded C/C++ programming.
 
-In addition to my technical skills, I possess strong mathematical skills in probability, advanced linear algebra, and calculus, which are highly valued in the field of engineering. I also have experience in data analysis and data visualization, which I believe will be useful in the role.
+In addition to my technical skills, I possess strong mathematical skills in probability, advanced linear algebra, and calculus. I am skilled in data analysis and data visualization, which I believe will be valuable in this role.
 
-Furthermore, I have experience with Ethernet and CAN communication protocols, which I believe will be a valuable asset in the SW Engineer role at Google.
+I am also excited about the opportunity to work with Ethernet or CAN communication protocols, as mentioned in the job posting. I believe that my experience in embedded systems and my strong mathematical background make me a strong candidate for this position.
 
-I am excited about the opportunity to join Google and contribute to its mission of empowering people and solving big problems through innovation. Thank you for considering my application.
+Thank you for considering my application. I look forward to the opportunity to discuss how my skills and experience can contribute to the success of Google.
 
 Sincerely,
 

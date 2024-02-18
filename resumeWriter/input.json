@@ -19,7 +19,7 @@
         {
             "company": "Workday",
             "position": "Software Engineering Intern (Site Reliability)",
-            "dates": "2023 to 2024",
+            "dates": "2023 - 2024",
             "responsibilities": [
                 "Created automation tooling for development workflow and continuous integration through a Go AWS Lambda bot.",
                 "Led the migration of a repository with 100+ developers to integrate the bot by defining and coding requested features.",
@@ -30,7 +30,7 @@
         {
             "company": "UC Berkeley Department of EECS",
             "position": "20-hour Undergraduate Student Instructor (uGSI)",
-            "dates": "2023 to 2024",
+            "dates": "2023 - 2024",
             "responsibilities": [
                 "Taught weekly discussion and lab sections, review sessions, and office hours for courses totaling 2500+ students.",
                 "Created and edited course content to enhance learning (worksheets, video walkthroughs, and study guides).",
@@ -40,7 +40,7 @@
         {
             "company": "Berkeley Codeology",
             "position": "Director of Technology",
-            "dates": "2023 to 2024",
+            "dates": "2023 - 2024",
             "responsibilities": [
                 "Coordinated 5 internal and 2 contract projects, providing tech exploration opportunities for 60 students.",
                 "Guided and supported a 15-member committee in brainstorming project ideas, developing curriculums, and debugging.",
@@ -50,7 +50,7 @@
         {
             "company": "Avanti",
             "position": "Software Developer",
-            "dates": "2023 to 2024",
+            "dates": "2023 - 2024",
             "responsibilities": [
                 "Built a React Native mobile app from scratch that connects K-12 students with local tutors in various subjects.",
                 "Led the implementation of various features including user authentication, organizing sessions, and real-time messaging.",

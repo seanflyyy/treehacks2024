@@ -4,40 +4,33 @@
     "phone": "630-854-2586",
     "email": "allengu01@berkeley.edu",
     "linkedin": "linkedin.com/in/allengu01",
-    "github": "github.com/allengu01",
-    "website": "allengu01.github.io"
+    "github": "https://github.com/allengu01",
+    "website": "https://allengu01.github.io"
   },
   "education": [
     {
-      "name": "University of California, Berkeley",
-      "degree": "Bachelor of Science",
+      "school": "University of California, Berkeley",
+      "level_of_education": "Bachelor of Science",
       "field_of_study": "Electrical Engineering and Computer Science",
-      "school_location": "Berkeley, California, USA",
-      "gpa": "3.98",
-      "coursework": "Operating Systems (in progress), Artificial Intelligence (in progress), Data Structures, Algorithms, Machine Learning, Computer Architecture, Database Systems, Computer Security, Optimization Models, Discrete Math and Probability, Probability and Random Processes, Structure and Interpretation of Computer Programs",
-      "start_date": "2020-08-01",
-      "end_date": "2024-01-15"
+      "school_location": "Berkeley, California, USA"
     }
   ],
   "experience": [
     {
       "company": "Workday",
       "position": "Software Engineering Intern (Site Reliability)",
-      "location": "Istanbul, Turkey",
-      "start_date": "2022-05-15",
-      "end_date": "present",
+      "dates": "2023 - present",
       "responsibilities": [
         "Created automation tooling for development workflow and continuous integration through a Go AWS Lambda bot.",
         "Led the migration of a repository with 100+ developers to integrate the bot by defining and coding requested features.",
         "Improved observability through Cloudwatch metric monitoring and Prometheus alarming, deployed on AWS EKS cluster.",
-        "Built AWS, Prometheus, and Kubernetes architecture with infrastructure as code (IaC) tool Terraform."
+        "Built AWS, Prometheus, and Kubernetes architecture with infrastructure as code (IaC)."
       ]
     },
     {
       "company": "UC Berkeley Department of EECS",
       "position": "20-hour Undergraduate Student Instructor (uGSI)",
-      "start_date": "2021-01-01",
-      "end_date": "present",
+      "dates": "2023 - 2024",
       "responsibilities": [
         "Taught weekly discussion and lab sections, review sessions, and office hours for courses totaling 2500+ students.",
         "Created and edited course content to enhance learning (worksheets, video walkthroughs, and study guides).",
@@ -47,8 +40,7 @@
     {
       "company": "Berkeley Codeology",
       "position": "Director of Technology",
-      "start_date": "2021-01-01",
-      "end_date": "present",
+      "dates": "2023 - 2024",
       "responsibilities": [
         "Coordinated 5 internal and 2 contract projects, providing tech exploration opportunities for 60 students.",
         "Guided and supported a 15-member committee in brainstorming project ideas, developing curriculums, and debugging.",
@@ -58,8 +50,7 @@
     {
       "company": "Avanti",
       "position": "Software Developer",
-      "start_date": "2021-08-01",
-      "end_date": "2021-12-31",
+      "dates": "2023 - 2024",
       "responsibilities": [
         "Built a React Native mobile app from scratch that connects K-12 students with local tutors in various subjects.",
         "Led the implementation of various features including user authentication, organizing sessions, and real-time messaging.",
